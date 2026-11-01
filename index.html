@@ -521,8 +521,7 @@
   </div>
 
   <script>
-    // আপনার Apps Script Web App URL এখানে বসান
-   var SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfychypIrs02wxxBbTwCldTp0HMeU8bX6y2VYZ7Xq0wwfq3AKyD8Cf14t1AAcbCE";
+    var SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfychypIrs02wxxBbTwCldTp0HMeU8bX6y2VYZ7Xq0wwfq3AKyD8Cf14t1AAcbCE/exec";
     var activePin = "";
     var currentSubPane = "admStats";
     var activeMemberData = null;
@@ -533,13 +532,13 @@
         return Promise.reject("Web App URL not configured");
       }
       return fetch(SCRIPT_WEBAPP_URL, {
-  return fetch(SCRIPT_WEBAPP_URL, {
-      method: 'POST',
-      mode: 'cors',
-      redirect: 'follow',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action: action, data: data, pin: pin })
-    }).then(function(res) { return res.json(); });
+        method: 'POST',
+        mode: 'cors',
+        redirect: 'follow',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: action, data: data, pin: pin })
+      }).then(function(res) { return res.json(); });
+    }
 
     function updateClock() {
       var now = new Date();
